@@ -4,6 +4,7 @@ import requests
 
 
 API_URL = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-7B-Instruct"
+HF_TOKEN = os.environ.get("HF_TOKEN")
 def query(payload):
     headers = {"Authorization": f"Bearer {HF_TOKEN}"}
     response = requests.post(API_URL, headers=headers, json=payload)
